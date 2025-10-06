@@ -62,3 +62,6 @@ conda env remove --prefix "E:\Projects_Productionization\01-Chatbots-Projects\P0
 
 conda env remove --name medibot # emove the one in your global .conda folder
 conda env remove --name mlproj # C:\Users\surface\.conda\envs\mlproj
+```
+
+you are now 80% confident to manage conda venv
