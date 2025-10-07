@@ -3,7 +3,7 @@
 <script src="script.js"></script>
 ```
 
-# Loggin output for debugging:
+# Logging output for debugging:
 ```js
 console.log("hello, js");
 ```
@@ -49,3 +49,50 @@ const greet = () => {};
 const greet = (name) => 'Hello, ${name}';
 console.log(greet("Polash"));
 ```
+
+
+# Control flow (Loops & Conditions)
+
+## if statement
+```js
+let age = 25;
+if () {
+
+} else {    
+
+}
+
+e.g 
+let age = 20;
+if (age >= 18) {
+    console.log("You are an adult");
+} else {
+    console.log("You are minor");
+}
+```
+
+## Loops
+### for loops
+```js
+for () {
+
+}
+
+e.g 
+for (let i=1; i <= 5; i++) {
+    console.log(i);
+}
+```
+
+### while loop
+```js
+while (){
+
+}
+
+e.g 
+let i =1;
+while (i<=5;){
+    console.log(i);
+    i++;
+}
