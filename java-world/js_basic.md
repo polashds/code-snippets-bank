@@ -3,7 +3,7 @@
 <script src="script.js"></script>
 ```
 
-# Logging output for debugging:
+# Logging output for debugging: console.log() similar to print() in python
 ```js
 console.log("hello, js");
 ```
@@ -95,4 +95,45 @@ let i =1;
 while (i<=5;){
     console.log(i);
     i++;
+}
+```
+
+# Arrays (Lists of data)
+```js
+let fruits = ["Apple", "Banana", "Mango"];
+console.log(fruits[1]);
+```
+
+## Array methods
+```js
+fruits.push("Orange"); // Add at the end
+fruits.pop("Orange"); // Remove last item
+fruits.unshift("Orange") // add at the beginning
+fruits.shift("Orange") // Remove first item
+```
+
+# Objects (Key-Value Pairs) like dict in python
+```js
+let person = {
+    name : "Polash",
+    age : 40,
+    city : "Dhaka",
+};
+console.log(person.name); // "Polash"
+```
+
+# Error Handling (Try-Catch Block- Handling errors gracefully)
+```js
+try{
+
+} catch (){
+
+}
+
+e.g. 
+try {
+    let result = 10/0;
+    console.log(result);
+} catch (error){
+    console.log("An error occoured:" error);
 }

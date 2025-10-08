@@ -28,3 +28,10 @@ or
 first_name = 'Jane'
 greet(first_name)
 ```
+
+
+# Python provides a built-in function called help() 
+# that allows you to show the documentation of a function.
+```py
+help(greet)
+```
