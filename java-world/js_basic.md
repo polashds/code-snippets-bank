@@ -122,6 +122,27 @@ let person = {
 console.log(person.name); // "Polash"
 ```
 
+
+# DOM Manipulation (Interacting with HTML)
+```js
+//Selecting elements:
+let heading = document.querySelector("h1");
+console.log(heading.innerText);
+
+//Changing text:
+heading.innerText = "New Title";
+
+//Changing styles:
+heading.style.color = "blue";
+
+//Handling events:
+document.querySelector("button").addEventListener("click", () => {
+  alert("Button clicked!");
+});
+```
+
+
+
 # Error Handling (Try-Catch Block- Handling errors gracefully)
 ```js
 try{
@@ -137,3 +158,39 @@ try {
 } catch (error){
     console.log("An error occoured:" error);
 }
+```
+
+
+# Asynchronous JavaScript (Promises & Fetch API)
+## Timeout Example:
+```js
+setTimeout (() => {
+    console.log("Execute after 2 seconds");
+}, 2000); 
+
+```
+
+##  Fetching Data (API Calls) fetch().then().then().catch()
+```js
+fetch("https://jsonplaceholder.typicode.com/posts/1")
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.error("Error:", error));
+```
+
+
+## Async/Await (Modern Syntax) async function fetchData(){try{respone, data}catch{}}fetchData();
+```js
+async function fetchData() {
+  try {
+    let response = await fetch("https://jsonplaceholder.typicode.com/posts/1");
+    let data = await response.json();
+    console.log(data);
+  } catch (error) {
+    console.error("Error:", error);
+  }
+}
+fetchData();
+```
+
+

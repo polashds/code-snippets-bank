@@ -117,8 +117,8 @@ useEffect(() => {
 ```
 
 # Conditional Rendering
-•	Show or Hide Elements
-jsx
+## Show or Hide Elements
+```jsx
  
 function Toggle() {
   const [isVisible, setIsVisible] = useState(true);
@@ -130,7 +130,10 @@ function Toggle() {
     </div>
   );
 }
-•	Using Ternary Operator
-jsx
+```
+## Using Ternary Operator
+```jsx
  
 {isVisible ? <p>Visible</p> : <p>Hidden</p>}
+```
+
