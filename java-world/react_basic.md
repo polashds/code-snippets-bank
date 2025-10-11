@@ -6,7 +6,7 @@ function App(){
 export default App;
 ```
 
-## Functional Component function Greeting({}){}
+## Functional Component function Greeting(){}
 ```jsx
 function Greeting({name}) {
     return <h1>Hello {name}</h1>;
@@ -71,7 +71,7 @@ function Form() {
 }
 ```
 
-# useEffect Hook (Side Effects & API Calls)
+# useEffect Hook (Side Effects & API Calls) useEffect({return()},[]);
 ## Runs after component renders
 ```jsx
  
@@ -119,8 +119,7 @@ useEffect(() => {
 # Conditional Rendering
 ## Show or Hide Elements
 ```jsx
- 
-function Toggle() {
+ function Toggle() {
   const [isVisible, setIsVisible] = useState(true);
 
   return (
@@ -131,9 +130,122 @@ function Toggle() {
   );
 }
 ```
+## in JavaScript, the && operator only evaluates the right-hand side if the left-hand side is true.
+true && <p>...</p> → shows the paragraph
+
+false && <p>...</p> → shows nothing
+
 ## Using Ternary Operator
 ```jsx
  
 {isVisible ? <p>Visible</p> : <p>Hidden</p>}
 ```
 
+# Lists & Keys
+## Rendering Lists in React to display multiple elements (like a list of items), you often use .map()
+###  .map()-Loops through arrays and returns JSX
+### key={index}- Unique ID for React to track list items
+```jsx 
+function List() {
+  const items = ["Apple", "Banana", "Mango"];
+
+  return (
+    <ul>
+      {items.map((item, index) => <li key={index}>{item}</li>)}
+    </ul>
+  );
+}
+```
+
+
+# React Router (Navigation Between Pages)
+## Setting Up Routes:
+```jsx
+import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
+
+function Home() {
+  return <h1>Home Page</h1>;
+}
+
+function About() {
+  return <h1>About Page</h1>;
+}
+
+function App() {
+  return (
+    <Router>
+      <nav>
+        <Link to="/">Home</Link>
+        <Link to="/about">About</Link>
+      </nav>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
+    </Router>
+  );
+}
+```
+
+
+# Context API (Global State Management Without Redux)
+## Avoids prop drilling by passing data globally.
+```jsx
+import { createContext, useContext, useState } from "react";
+
+const ThemeContext = createContext();
+
+function ThemeProvider({ children }) {
+  const [theme, setTheme] = useState("light");
+  return (
+    <ThemeContext.Provider value={{ theme, setTheme }}>
+      {children}
+    </ThemeContext.Provider>
+  );
+}
+
+function ToggleTheme() {
+  const { theme, setTheme } = useContext(ThemeContext);
+  return (
+    <button onClick={() => setTheme(theme === "light" ? "dark" : "light")}>
+      Toggle Theme
+    </button>
+  );
+}
+
+function App() {
+  return (
+    <ThemeProvider>
+      <ToggleTheme />
+    </ThemeProvider>
+  );
+}
+```
+
+
+# Deploying React App
+## Build App:
+```bash
+ npm run build
+
+#	Deploy with Vercel:
+npm install -g vercel
+
+# Deploy with GitHub Pages:
+npm install gh-pages --save-dev
+```
+
+### Add to package.json:
+```json
+ 
+"homepage": "https://yourusername.github.io/your-repo",
+"scripts": {
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -d build"
+}
+```
+
+### Deploy with:
+```bash
+ npm run deploy
+```
