@@ -42,7 +42,7 @@ function greet(name) {
 console.log(greet("Polash"));
 ```
 
-# •	Arrow function (modern syntax):
+# Arrow function (modern syntax):
 ```js
 const greet = () => {};
 
